@@ -1,14 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
- 
 
-import Routers from './routers/Routers';
+import { Switch, Route,Router} from "react-router-dom";
+import { createBrowserHistory } from "history";
+import './App.css';
+import Login from './pages/Login';
+import HomePage from './pages/HomePage';
+
+const history = createBrowserHistory();
+
 
 
 function App() {
   return (
-    <div  >
-    <Routers/>
+    <div>
+      <Router history={history}>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <HomePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

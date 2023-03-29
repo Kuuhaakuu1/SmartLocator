@@ -14,5 +14,5 @@ RUN npm install
 ARG base_url
 ENV REACT_APP_URI=${base_url}
 
-#RUN npm run build 
-#CMD ["npm", "start"]
+RUN npm run build 
+CMD ["npm", "start"]

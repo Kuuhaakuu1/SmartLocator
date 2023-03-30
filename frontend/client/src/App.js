@@ -5,6 +5,7 @@ import './App.css';
 import Login from './pages/Login';
 import HomePage from './pages/HomePage';
 
+
 const history = createBrowserHistory();
 
 
@@ -19,6 +20,10 @@ function App() {
           </Route>
           <Route path="/home">
             <HomePage />
+          </Route>
+          <Route exact path="/signup">
+            <Login />
+            
           </Route>
         </Switch>
       </Router>

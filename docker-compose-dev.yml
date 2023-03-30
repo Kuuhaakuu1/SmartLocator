@@ -5,11 +5,13 @@ services:
     image: django_backend
     build:
       context: ./backend
+      dockerfile: Dockerfile
 
     ports:
       - 8000:8000
     volumes:
-      - ./backend/:/django_app
+      - ./backend:/django_app
+      - /django_app/static
     command: python manage.py runserver 0.0.0.0:8000
     
   frontend-dev:
@@ -18,10 +20,11 @@ services:
       context: ./frontend/client
       args:
         base_url: http://localhost:8000
+      dockerfile: Dockerfile
     volumes:
-      - './frontend/client/:/react_app'
-      -  '/react_app/node_modules'
+      - ./frontend/client:/react_app
     ports:
       - 3000:3000
-
-    command:  npm start
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+    command: npm start

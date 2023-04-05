@@ -64,7 +64,7 @@ function Login() {
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder='Email'
+            placeholder='Eazemail'
           />
        
         

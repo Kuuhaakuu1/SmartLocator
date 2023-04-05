@@ -6,7 +6,7 @@ COPY . .
 COPY package.json /react_app
 COPY package-lock.json /react_app
 
-RUN npm install
+
 
 # COPY . /react_app
 

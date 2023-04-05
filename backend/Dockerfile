@@ -13,10 +13,10 @@
 
 
 
-    COPY . ./app
+    COPY . ./django_app
     COPY ./scripts /scripts
-    COPY requirements.txt /app
-    WORKDIR /app
+    COPY requirements.txt /django_app
+    WORKDIR /django_app
     EXPOSE 8000
 
 
@@ -40,6 +40,6 @@
         
     ENV PATH="/scripts:/py/bin:$PATH"
 
-    USER app 
+   
 
    CMD ["python", "manage.py", "runserver"]

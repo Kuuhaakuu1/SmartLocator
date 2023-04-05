@@ -1,4 +1,4 @@
-FROM  node:14.9
+FROM  node:alpine
 
 WORKDIR /react_app
 
@@ -7,7 +7,7 @@ COPY package.json /react_app
 COPY package-lock.json /react_app
 
 
-
+RUN npm install
 # COPY . /react_app
 
 # Get build argument and set environment variable

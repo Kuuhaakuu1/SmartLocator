@@ -67,10 +67,10 @@ database=firebase.database()
 
 @api_view(['POST'])
 def login(request):
-    email = request.data.get('email')
+    username = request.data.get('username')
     password = request.data.get('password')
     try:
-        user = auth.sign_in_with_email_and_password(email, password)
+        user = auth.sign_in_with_email_and_password(username, password)
         return Response({'success': True})
     except auth.AuthError as e:
         # user authentication failed

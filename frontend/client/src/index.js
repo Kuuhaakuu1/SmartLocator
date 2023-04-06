@@ -8,10 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
  
  
-//require('./assets/js/jquery.min.js')
 
-require('./assets/js/bootstrap.bundle.min.js')
-require('./assets/js/script.js')
 ReactDOM.render(
   <React.StrictMode>
     <App />

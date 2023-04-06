@@ -23,6 +23,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend/client:/react_app
+      - /react_app/static
     ports:
       - 3000:3000
     environment:

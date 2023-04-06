@@ -11,7 +11,7 @@ function Login() {
 
   
   const history = useHistory();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   
   const login = async (e) => {
@@ -25,7 +25,7 @@ function Login() {
         
       },
       body: JSON.stringify({
-        email,
+        username,
         password,
       }),
       
@@ -58,26 +58,26 @@ function Login() {
        
        
         
-          <input
-            className="App1-input"
-            name='email'
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder='Eavemail'
-          />
-       
+           <input
+              type="email"
+              name="username"
+              className=" App1-input form-control"
+              placeholder="username"
+              onChange={(e) => setUsername(e.target.value)}
+              autoComplete="false"
+            />
+          <a href="/" className="Link1">Forgot password</a>
         
           
           <input
-            className="App1-input2"
-            name='password'
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder='Password'
-          />
-        
+              type="password"
+              name="password"
+              className="App1-input2 form-control"
+              placeholder="password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          <p className="para">Don't have an account?</p>
+          <a href="/SignUp" className="Link">Create account</a>
         <button className="App1-button" type="submit" value="Login">LOGIN</button>
       </div>
     </form>

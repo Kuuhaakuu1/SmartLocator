@@ -86,4 +86,6 @@ $ docker-compose -f docker-compose-prod.yml  Up
 <li>/api/portfolio/</li>
 <li>/api/team/</li>
 <li>/api/about/</li>
+<li>/api/login/</li>
+
 </ul>

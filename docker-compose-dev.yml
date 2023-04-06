@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  backend-dev:
+    image: django_backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend:/django_app
+      - /django_app/static
+    command: python manage.py runserver 0.0.0.0:8000
+    
+  frontend-dev:
+    image: react_frontend
+    build:
+      context: ./frontend/client
+      args:
+        base_url: http://localhost:8000
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/client:/react_app
+      - /react_app/static
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=1
+    command: npm start

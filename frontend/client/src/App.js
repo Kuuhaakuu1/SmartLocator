@@ -1,30 +1,23 @@
-
-import { Switch, Route,Router} from "react-router-dom";
-import { createBrowserHistory } from "history";
-import './App.css';
-import Login from './pages/Login';
-import HomePage from './pages/HomePage';
-
+import React from "react";
+import { BrowserRouter as Router, Route, Routes,Navigate} from "react-router-dom";
+import Login from "./Pages/Login";
+// import HomePage from './Pages/HomePage';
+import Profile from "./Pages/Profile";
+// import QrFetcher from "./Pages/QrFetcher";
+import Info from "./Pages/Info";
 
 const history = createBrowserHistory();
-
-
 
 function App() {
   return (
     <div>
       <Router history={history}>
         <Switch>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route exact path="/SignUp">
-            <Login />
-            
-          </Route>
+                <Route exact path="/" element={<Login />}/>
+                <Route exact path="/profile" element={<Profile/>}/>
+                {/* <Route exact path="/home" element={<HomePage/>}/> */}
+                {/* <Route exact path="/QrFetcher" element={<QrFetcher/>}/> */}
+                <Route exact path="info" element={<Info/>}/>
         </Switch>
       </Router>
     </div>

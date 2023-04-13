@@ -4,7 +4,8 @@ import firebase_admin
 from rest_framework.response import Response
 from django.http import HttpResponse, JsonResponse
 from rest_framework.decorators import api_view
-from firebase_admin import auth, credentials, initialize_app
+from firebase_admin import auth, credentials, initialize_app, storage
+
 # Create your views here.
 
 config={
@@ -32,3 +33,24 @@ def login(request):
         # user authentication failed
         error_message = e.detail
         return Response({ 'success': False,'error': error_message})
+    
+@api_view(['POST'])
+def profile_picture(request):
+     
+     file = request.FILES.get('profile_picture')
+
+     if file is None:
+            return JsonResponse({'error': 'No file was uploaded.'}, status=400)
+     
+     print(request.FILES) # Debugging statement
+     try:
+        bucket = storage.bucket()
+        blob = bucket.blob(file.name)
+        blob.upload_from_file(file)
+        url = blob.public_url
+        return JsonResponse({'message': 'Profile picture updated.', 'url': url}, status=200)
+     except Exception as e:
+        logger.error(e)
+        return JsonResponse({'error': 'An error occurred while uploading the file.'}, status=500)
+    
+

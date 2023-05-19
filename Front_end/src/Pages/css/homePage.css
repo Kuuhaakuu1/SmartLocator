@@ -5,4 +5,13 @@
     width: 100%;
     height: 100%;
     
+  
+  }
+  .teamcard{
+    background-color: #2125299c;
+    color: #fff;
+    padding: 10px;
+  }
+  .teamcard-title{
+    color:#d3b419;
   }

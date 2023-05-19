@@ -24,10 +24,10 @@ function HomePage() {
             picture: soufiane
         },
         {
-            name: "Elgbrouri Saad",
-            email: "elgbouri.saad@gmail.com",
-            role: "Backend Developer",
-            picture: saad
+            name: "Zerouali Hamza",
+            email: "H.zerouali04@gmail.com",
+            role: "Frontend Developer",
+            picture:    hamza
         },
         {
             name: "Taoui Ranya",
@@ -36,50 +36,57 @@ function HomePage() {
             picture:  ranya
         },
         {
+            name: "Elgbrouri Saad",
+            email: "elgbouri.saad@gmail.com",
+            role: "Backend Developer",
+            picture: saad
+        },
+        
+        {
             name: "Zakari Anas",
             email: "Zakari.anas2000@gmail.com",
             role: "Backend Developer",
             picture: anas
         },
-        {
-            name: "Zerouali Hamza",
-            email: "H.zerouali04@gmail.com",
-            role: "Frontend Developer",
-            picture:    hamza
-        },
+        
         // Add more team members here
     ];
 
     return (
-        <div className="home-body  d-flex justify-content-center justify-content-center min-vh-100">
-            <Navbar />
-
-            <div className="container d-flex justify-content-center align-items-center">
-                <div className="row">
-                    {teamMembers.map((member, index) => (
-                        <div className="col-md-4" key={index}>
-
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                    <img src={member.picture} class="img-fluid rounded-start" alt="member picture"/> 
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{member.name}</h5>
-                                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+        <div className="home-body d-flex justify-content-center align-items-center min-vh-100">
+          <Navbar />
+      
+          <div className="container d-flex justify-content-center align-items-center">
+            <div className="row">
+              <div className="col-md-12" style={{ marginBottom: "50px", marginTop: "50px" }}>
+                <h1 className="text-center text-white">Our Team</h1>
+              </div>
+      
+              {teamMembers.map((member, index) => (
+                <div className="col-md-4 " key={index}>
+                  <div className="card mb-3 teamcard" style={{ height: "150px", overflow: "hidden" }}>
+                    <div className="row ">
+                      <div className="col-md-4 ">
+                        <img src={member.picture} className="col-md-12 img-fluid rounded-start" alt="member picture" style={{ height: "100%", objectFit: "cover" }} />
+                      </div>
+                      <div className="col-md-8">
+                        <div className="card-body ">
+                          <h5 className="card-title teamcard-title">{member.name} <br /> <small style={{ fontSize: 13 }} className="text-muted">{member.role}</small> </h5>
+                          <p className="card-text"> </p>
+                          <p className="card-text"> {member.email} </p>
+                          <p className="card-text"><small className="text-muted"></small></p>
                         </div>
-                    ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              ))}
+      
             </div>
+          </div>
         </div>
-    );
+      );
+      
 }
 
 export default HomePage;

@@ -1,0 +1,43 @@
+.signup-body {
+  background-image: url("../../assets/bg.webp");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  width: 100%;
+  height: 100%;
+  
+  overflow: hidden;
+}
+
+
+.signup-container{
+  margin-top: 10px;
+  border: 5px solid #d3b41921;
+  border-radius: 5px;
+  background-color: #2125299c;
+  color: #fff;
+}
+
+
+.signup-input {
+  border-radius: 5px !important;
+}
+
+.signup-input:focus {
+  border-color: #d3b41921 !important;
+  box-shadow: 0 0 0 2px #d3b41921 !important;
+} 
+.btn-signup{
+ 
+  background-color: #c2a516  !important;
+  border-color: #d3b419  !important;
+}
+.btn-signup:hover{
+  background-color: #d3b41967  !important;
+  border-color: #d3b41967  !important;
+}
+
+.go-back {
+  color: #e1cd67d7;
+  margin-bottom: 10px;
+  margin-left: -20px;
+}

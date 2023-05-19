@@ -9,6 +9,11 @@ import 'firebase/compat/auth';
 import { FaArrowLeft } from 'react-icons/fa';
 import 'firebase/compat/firestore';
 
+
+
+
+
+
 const SignUp = () => {
 
   const [loader, setLoader] = useState(false);
@@ -25,7 +30,10 @@ const SignUp = () => {
   const [imgFile, setImgFile] = useState(new File([], ""));
   const [url, setUrl] = useState(null);
   
-
+  const back = () => {
+    
+    navigate(`/`);
+  }
   // uploading image
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -174,7 +182,7 @@ const SignUp = () => {
 
             <div className="col-12 row mb-md-3 mt-md-3">
               <div className="col-md-5 col-6">
-                <a href="#" className="go-back ">
+                <a href="#" className="go-back " onClick={back}>
                 <FaArrowLeft /> Already have an account ?
               </a>
               </div>

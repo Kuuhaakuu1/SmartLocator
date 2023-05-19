@@ -150,7 +150,7 @@ const [showModal, setShowModal] = useState(false);
         </div>
         <div className=" col-8 profile-card d-flex justify-content-center align-items-center">
 
-<iframe src="/Home"
+<iframe src="/map"
   width="95%"
   height="95%"
   style={{ border: "5px solid black" }}
